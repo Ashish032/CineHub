@@ -39,7 +39,10 @@ class MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text(
           'MovieSphere',
-          style: TextStyle(color: Color.fromARGB(255, 250, 92, 80)),
+          style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontSize: 25,
+              fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.black87,
         actions: <Widget>[
@@ -70,7 +73,6 @@ class MyHomePageState extends State<MyHomePage> {
                       width: 120.0,
                       height: 120.0,
                       decoration: BoxDecoration(
-                        // shape: BoxShape.rectangle,
                         image: DecorationImage(
                           fit: BoxFit.fitWidth,
                           image: NetworkImage(thumbnail),
@@ -81,7 +83,7 @@ class MyHomePageState extends State<MyHomePage> {
               title: Text(show['name'],
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 25,
+                      fontSize: 20,
                       color: Colors.white)),
               subtitle: Text(
                 show['summary'] != null
@@ -111,6 +113,7 @@ class MyHomePageState extends State<MyHomePage> {
         selectedFontSize: 14,
         unselectedFontSize: 12.0,
         selectedLabelStyle: const TextStyle(fontSize: 15, color: Colors.white),
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
@@ -118,7 +121,7 @@ class MyHomePageState extends State<MyHomePage> {
               'assets/image/home.png',
               height: 30,
             ),
-            label: '',
+            label: ' ',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(

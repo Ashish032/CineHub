@@ -22,8 +22,11 @@ class SearchScreenState extends State<SearchScreen> {
           controller: searchController,
           style: const TextStyle(color: Colors.white),
           decoration: const InputDecoration(
-            hintText: 'Search movies',
-          ),
+              hintText: 'Search movies',
+              hintStyle: TextStyle(
+                color: Colors.white24,
+              ),
+              fillColor: Colors.white),
         ),
         actions: [
           IconButton(
@@ -54,6 +57,39 @@ class SearchScreenState extends State<SearchScreen> {
             },
           );
         },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black87,
+        selectedFontSize: 14,
+        // unselectedFontSize: 12.0,
+        //selectedLabelStyle: const TextStyle(fontSize: 15, color: Colors.white),
+        selectedItemColor: const Color.fromARGB(255, 255, 255, 255),
+
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/image/home.png',
+              height: 30,
+            ),
+            label: 'Home ',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/image/download.png',
+              height: 30,
+            ),
+            label: 'Download',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset(
+              'assets/image/account.png',
+              height: 30,
+              //color: Colors.white,
+            ),
+            label: 'Account',
+          )
+        ],
       ),
     );
   }

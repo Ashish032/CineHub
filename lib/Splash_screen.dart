@@ -19,7 +19,7 @@ class _splashScreenState extends State<splashScreen> {
 
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyHomePage()));
+          context, MaterialPageRoute(builder: (context) => const MyHomePage()));
     });
   }
 
