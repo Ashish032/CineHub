@@ -70,11 +70,11 @@ class MyHomePageState extends State<MyHomePage> {
               contentPadding: const EdgeInsets.all(16.0),
               leading: thumbnail != null
                   ? Container(
-                      width: 120.0,
-                      height: 120.0,
+                      width: 100.0,
+                      height: 400.0,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          fit: BoxFit.fitWidth,
+                          fit: BoxFit.cover,
                           image: NetworkImage(thumbnail),
                         ),
                       ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:project/details_Screen.dart';
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
   @override
@@ -40,20 +42,25 @@ class SearchScreenState extends State<SearchScreen> {
       body: ListView.builder(
         itemCount: searchResults.length,
         itemBuilder: (context, index) {
-          final movie = searchResults[index]['show'];
+          final show = searchResults[index]['show'];
           return ListTile(
-            leading: Image.network(movie['image']['medium']),
+            leading: Image.network(show['image']['medium']),
             title: Text(
-              movie['name'],
+              show['name'],
               style: const TextStyle(color: Colors.white),
             ),
             subtitle: Text(
-              movie['summary'],
+              show['summary'],
               style: const TextStyle(color: Colors.white),
               maxLines: 1,
             ),
             onTap: () {
-              Navigator.pushNamed(context, '/details', arguments: movie);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MovieDetailsScreen(movie: show),
+                ),
+              );
             },
           );
         },
@@ -69,7 +76,7 @@ class SearchScreenState extends State<SearchScreen> {
               'assets/image/home.png',
               height: 30,
             ),
-            label: 'Home ',
+            label: ' ',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
